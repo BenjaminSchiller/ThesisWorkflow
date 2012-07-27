@@ -1,0 +1,686 @@
+\documentclass{article}
+
+\usepackage{geometry}
+\geometry{a4paper,left=15mm,right=15mm,top=20mm,bottom=20mm}
+
+\usepackage{graphicx}
+\graphicspath{{images/}{./}}
+\DeclareGraphicsExtensions{.pdf,.png,.jpg}
+
+\usepackage{url}
+\usepackage{hyperref}
+
+\usepackage{mathtools}
+
+\newcommand{\img}[4]{
+	% #1 - source
+	% #2 - label
+	% #3 - caption
+	% #4 width, relative to \textwidth
+	\begin{figure}[!htb]
+		\centering
+		\includegraphics[width=#4\textwidth]{#1}
+		\caption{#3}
+		\label{#2}
+	\end{figure}
+}
+
+\title{B.Sc. / M.Sc. Workflow, Hints, and Information}
+\author{Benjamin Schiller\\\url{schiller@cs.tu-darmstadt.de}}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+
+\abstract{This documents gives a rough overview over the workflow when doing a Bachelor or Master thesis with us. Also, it includes hints on how to find and read papers, how to structure your thesis, and how to properly write down your accomplishments. Furthermore, it contains some information about the tools we use, the accounts you need to create, what information we need from you, and how to proceed when handing in your thesis.}
+
+
+\section{Rough timeline of a thesis}
+A thesis (very) roughly consists of four main parts: reading, solving a problem, implementation, and evaluation.
+While they build upon each other, there is not always a clear cut between them.
+Writing your thesis is an ongoing process which you should pursue from the first day, starting by annotating the first paper you read.
+Giving exact durations to these phases is quite impossible as it highly depends on each thesis and topic.
+This is why thinking about a rough timetable is the last question of your expos\'{e}e as described in Section \ref{sec:exposee}.
+
+\paragraph{$1^{st}$ phase - Reading}
+In the first part of your thesis, you get an understanding of its topic and contents by reading and researching the related work, i.e., what other have already done in your field.
+This gives you a better understanding of the problem we are attempting to tackle and hopefully solve in this thesis.
+After you have finished this part, you should have a good understanding of the area we are working on.
+It should then be easy to answer all the questions required for the expos\'{e}e (cf. Section \ref{sec:exposee}).
+After finalizing the expos\'{e}e, we register your thesis at the Pr\"{u}fungssekreteriat and the official time of 3 months (B.Sc.) or 6 months (M.Sc.) starts.
+
+\paragraph{$2^{nd}$ phase - Solving the problem}
+After understanding the problem we are about to tackle, we start thinking about a solution.
+This means figuring out how to solve the problem we are investigating or at least parts of it (in order to make the world a better place).
+
+\paragraph{$3^{rd}$ phase - Implementation}
+In most cases, we need to implement the solution or a way to evaluate our solution / test our hypothesis, etc.
+After figuring out a solution to our problem / a way how to solve it or at least parts of it, you will start to implement means to show that our solution is valid.
+
+\paragraph{$4^{th}$ phase - Evaluation}
+The last phase of your thesis will be the evaluation of our solution.
+For example, evaluating multiple simulations runs of a system under investigation and drawing conclusions about the investigated system, its parameters, out hypothesis, etc.
+
+\paragraph{Handing in your thesis}
+
+When handing in the final version of your thesis, we need four printed copies.
+In two of them, a CD/DVD containing source code, thesis sources, result data sets, etc., must be included.
+If you want to save some money, you can print the two other copies in black/white.
+
+The deadline for handing in the thesis is determined when registering the thesis.
+
+
+\paragraph{Defense}
+
+After handing in your thesis, you will give a presentation (defense) where you describe the contents of your thesis, what you did, what the results are, etc.
+This should be done roughly four to five weeks after handing in the thesis.
+
+
+
+
+
+
+\section{The expos\'{e}e}
+\label{sec:exposee}
+
+After the first phase of your thesis, i.e., reading and understanding about your topic and the related work, you are expected to write a short expos\'{e}e.
+It is supposed to answer the following seven questions.
+Answering these questions ensures that you understand the problem we are tackling and that we are on the same page on what is supposed to be done as part of your thesis.
+
+\paragraph{Problem statement}
+The problem (what /exactly/ is the problem tackled in this thesis)
+
+\paragraph{Relevance / motivation}
+Some support for it's relevance (why is it really a problem and why will solving it change the world and make it a better place? )
+
+\paragraph{Background}
+A rough overview over background (explain the basics) and related work (what do others solve and what is missing) (it can help to already roughly sketch the requirements for the system, as well as metrics that can be used to show if a solution is good or bad => especially the metrics that will show that your solution is better than the state of the art)
+
+\paragraph{Our approach}
+A first sketch of an idea how the problem could be solved in the thesis -- here the proposal will indicate which ideas the student wants to follow and how they will be implemented
+
+\paragraph{Solving the problem}
+A very short rationale why this solution will solve the problem (and how)
+
+\paragraph{Evaluation}
+An indication how the solution will be evaluated (at best: together with the expected outcome) -- here it will indicate how the student will show the superiority (or characteristics) of the solution, will most probably contain two of (mathematical analysis \& proofs|simulation|prototypical implementation and measurement study). Keep in mind that you will have to compare your solution to a "baseline", iow. the best existing solution, and that you will somehow need to show this in your thesis (evaluating /both/!) -- unless you are the first one solve a new problem and there is no prior art (in which case it is still a sign of quality to come up with a baseline like, e.g., an upper bound (the optimal solution), or a trivial solution).
+
+\paragraph{Timeplan}
+An initial time plan: what are the major steps (and milestones) and roughly during which time will they be dealt with. Should contain "literature review", "initial design phase", "implementation", "implementing the evaluation", "evaluation", "writing", and "final revision and correction". Allow at least 2 weeks for the revision and corrections and at least 4 weeks for the "writing" (but make no mistake: state writing early, you will need at least the four weeks to make a story out of you text snippets, to rearrange content avoiding redundancy and streamlining the logic, etc.
+
+
+
+
+
+
+
+
+
+
+\section{Finding and reading papers}
+
+
+\subsection{Publication formats}
+
+The following list gives a quick overview over the different ways, how scientific results can be published.
+
+\begin{itemize}
+	\item \textbf{books / book chapter} - detailed information, mostly very good quality, not necessarily up-to-date
+	\item \textbf{journal article} - strictly reviewed, long duration until publication, potentially outdated
+	\item \textbf{conference paper} - quality depends on the conference
+	\item \textbf{conference poster} - very new but potentially uncertain results / rough ideas
+	\item \textbf{workshop paper} - often work-in-progress, quality depends on associated conference
+	\item \textbf{technical report} - detailed description of a problem and its solution, not peer-reviewed
+	\item \textbf{webpage} - not peer-reviewed, can only be quick notes
+\end{itemize}
+
+
+\subsection{Finding additional sources}
+
+In essence, there are three ways to find publications on a given topic: searching by keywords, backwards referencing, and forward referencing.
+
+The easiest way is to use the search functionalities of a publication database like \emph{Google Scholar}, \emph{ACM}, or the proceedings of relevant conferences.
+Always keep in mind that not everyone uses the same terminology and keywords even though working on the same topic.
+Hence, always think about different keywords that might point to publications from the area you are working on.
+The following list includes the most important portals for finding papers:
+
+\begin{itemize}
+	\item ACM - \url{http://portal.acm.org/portal.cfm}
+	\item IEEE Xplore - \url{http://elib.tu-darmstadt.de/ieee/Xplore/dynhome.jsp}
+	\item ULB - \url{http://www.ulb.tu-darmstadt.de}
+	\item Libraries - \url{http://wwwwbs.cs.tu-berlin.de/bibliotheken}
+	\item SpringerLink - \url{http://www.springerlink.com}
+	\item Science Direct - \url{http://www.sciencedirect.com}
+	\item CS Bibliographies - \url{http://liinwww.ira.uka.de/bibliography}
+	\item DBLP - \url{http://dblp.mpi-inf.mpg.de/dblp-mirror/index.php}
+	\item Google Scholar - \url{http://scholar.google.com}
+	\item CiteseerX - \url{http://citeseerx.ist.psu.edu}
+	\item Zentralblatt Math - \url{http://www.zentralblatt-math.org/zmath/en/}
+	\item Arxiv - \url{http://arxiv.org}
+	\item Conference webpages \dots \footnote{\url{http://en.wikipedia.org/wiki/List_of_computer_science_conferences}}
+	\begin{itemize}
+		\item always prefer the good conferences: INFOCOM, SIGCOMM, CCS, S\&P (Oakland), WWW, Usenix, PETs, STOC, FOCS, \dots
+	\end{itemize}
+\end{itemize}
+
+WHen you have found a paper that is relevant for your work, you should also look at its references.
+Since most paper contain information about related work that has been done before, the bibliography should contain the most important works of the same field.
+Therefore, it is always a good idea to simply look at the bibliography of relevant papers and investigate the papers that have been referenced often.
+
+The other way around would be to look at the papers that reference (potentially older) publications that are relevant to your work.
+Most portals provide a list of publications that cite a specific paper, e.g., in Google Scholar under the link \emph{Cited by}.
+
+Very often, you will find a paper with a title that sound very promising and like a perfect fit to your topic.
+Since not all of these paper are in fact relevant for your work, before printing and potentially reading a paper completely, skim over the abstract to check if the content of the paper really contains what the title (in your context) seems to promise.
+In case the abstract sound promising as well, read the summary and conclusion next before including a paper into your reading queue.
+
+
+
+\subsection{Reading papers}
+
+
+\textbf{Reading papers: }
+\begin{itemize}
+\item decide on a set of questions you want to be answered by this paper
+\item write down/mark the answers to those questions + other interesting stuff you find
+\item relate the paper to others, categorization 
+\item you can (but don't have to) use tools for organizing literature (e.g. Mendeley \url{http://www.mendeley.com/}) 
+\end{itemize}
+
+\textbf{Writing the final version: }
+\begin{itemize}
+\item decide on structure: 
+   \begin{itemize}
+    \item abstract, introduction and conclusion are necessary
+    \item possibly a background section introducing concepts necessary to understand the actual content: notation, mathematical concepts and theorems, basic terms
+    \item the remaining structure should classify the papers you read in some way
+    \item most cases: one general section introducing the different categories and one (sub)section per category
+    \item alternative: discuss analytical ideas in one section, practical evaluation in a second section
+    \item alternative: discuss ideas in one section and results in a second
+   \end{itemize} 
+\item write each section down in bullet points usually starting with the 'content sections', organise bullet points into groups, so that each group contains one basic thought (which will later be one paragraph)
+\item write down the full text
+\item several iterations of corrections:
+\begin{enumerate}
+\item structure, overall content (ideally before writing down the full text!)
+\item content, sense, understanding
+\item grammar and spelling
+\end{enumerate}
+\end{itemize}
+
+\textbf{LaTeX:}
+\begin{itemize}
+\item compile regularly, at latest after each paragraph, after each (long) mathematical equation and whenever you try something new
+\item behavior varies between different operating systems, LaTeX distributions and Editors, so make sure you know your system setting when googling for help
+\item Guide: \url{http://en.wikibooks.org/wiki/LaTeX}
+\item Forum: \url{http://www.latex-community.org/forum/}
+\end{itemize}
+
+
+
+
+
+
+
+
+
+\section{Outline of a thesis}
+
+
+
+\subsection*{Tips on scientific writing}
+
+\begin{itemize}
+	\item \url{http://homepages.inf.ed.ac.uk/bundy/how-tos/writingGuide.html}
+	\item \url{http://www-net.cs.umass.edu/kurose/writing/}
+	\item \url{http://www.cs.columbia.edu/~hgs/etc/writing-style.html}
+	\item Book: \emph{Zen - or the art of motorcycle maintenance, AUTHOR TODO}\footnote{\url{TODO}}
+	\item Book: \emph{The craft or research, AUTHOR TODO} \footnote{\url{TODO}}
+\end{itemize}
+
+
+
+
+\subsection*{Outline for a computer science paper}
+
+The following list gives an overview over a good outline for a computer science paper (according to Al Bundy)~\footnote{\url{http://homepages.inf.ed.ac.uk/bundy/how-tos/resbible.html}}.
+
+\begin{description}
+	\item[Title] - ideally the title should state the hypothesis of the paper
+	\item[Abstract] - state hypothesis and summarise the evidence that supports or refutes it
+	\item[Introduction] - motivate the contribution!
+	\item[Literature Survey] - broad and shallow account of the field, rival approaches, drawbacks of each, major outstanding problems
+	\item[Background] - states previous work in more detail, where this is necessary for understanding
+	\item[Theory] - underlying theory, definitions, theorems etc.
+	\item[Specification] - requirements and specs of implementation
+	\item[Implementation Evaluation Related Work] - narrow but deep comparison with main rivals
+	\item[Further Work Conclusion] - summarise research, discuss significance, restate hypothesis and the evidence for and against it, - recapitulate original motivation, reassess the state of the field in the light of this new contribution
+	\item[Appendices]
+\end{description}
+
+
+
+
+\subsection*{Plagiarism}
+
+\begin{itemize}
+	\item \url{TODO LINK TUD INF FB}
+	\item \url{http://www.williamstallings.com/Extras/Writing_Guide.html}
+\end{itemize}
+
+
+\subsection*{Structural hints}
+
+The following lists gives a rough overview on how to structure sections, paragraphs, and sentences and how to deal with different levels of abstraction.
+
+\paragraph{Sentences}
+A sentence presents a single statement, e.g., $x = y$, \emph{red is not blue}, $z < 1 \Rightarrow x = y$.
+
+\paragraph{Paragraphs}
+A paragraph contains all statements belonging to the same idea or concept.
+For example, $x > 2$ and $y = 7 \Rightarrow x > 10$ should be grouped in a single paragraph.
+Separate paragraph on the other hand should be used for statements like \emph{``the weather is nice"} and \emph{``elephants are huge"}.
+
+\paragraph{Sections}
+A section combines all statements that belong to the same idea / line of thoughts.
+In most cases, this implies that they are on the same level of abstraction.
+Subsections should logically divide the content of a section and build upon each other, e.g., ``preliminaries for X", ``approaches for X", ``new ideas".
+
+\paragraph{Abstraction levels}
+Inside a paragraph, always stay on the same level ob abstraction, e.g., design, specification, implementation.
+In case you change the level of abstraction inside a section, do not jump between these levels.
+Either move from a high level of abstraction to a low level or the other way around (e.g., design $\rightarrow$ specification $\rightarrow$ implementation or implementation $\rightarrow$ specification $\rightarrow$ design).
+
+\paragraph{Reader's digest}
+The first part of every section summarizes what the content of this section is, e.g., ``In this Section, we motivate our work, describe the problem space, and solve the problem".
+This allow the reader to quickly get an idea about the content of a section.
+
+
+
+
+
+\subsection{Abstract}
+
+The abstract of a thesis consists of the following four points (one paragraph each):
+
+\begin{enumerate}
+	\item Problem statement: What is the problem we are trying to solve? ()One problem is more than sufficient for a thesis!)
+	\item Relevance: Why is this problem really a problem?
+	\item Response: What is our solution to the problem?
+	\item Confidence: how do we show in this thesis, that our solution is good?
+\end{enumerate}
+
+\subsection{Introduction}
+\begin{itemize}
+	\item Broad Topic, potentially little broad background
+	\begin{itemize}
+		\item topic, special problem we're looking at, motivation
+		\item propably more background for our problem (why is it actually hard?) 
+		\item broad background, general definitions
+	\end{itemize}
+	\item our goal and our claims (what are we solving in this work?)
+	\begin{itemize}
+		\item Our goal, research question, motivation and relevance (Why is it a problem the reader should care about? Why is it hard?)
+	\end{itemize}
+	\item Requirements for our solution
+	\begin{itemize}
+		\item Requirements for a good solution
+	\end{itemize}
+	\item Which metrics can we use to show the quality/quantity of our solution?
+	\begin{itemize}
+		\item probapbly rough definition of metrics
+		\item Metrics to measure how good a solution is
+	\end{itemize}
+	\item If space missing the related work may be presented in a paragraph here
+	\item Summary of our solution
+	\begin{itemize}
+		\item Overview of our solution and first confidence (how do we show that it's good?)
+	\end{itemize}
+	\item Our contributions in this paper
+	\item outline of the paper / reader's digest
+	\item Related work (can be done together with literature survey)
+	\begin{itemize}
+		\item STATE HOW THE RELATED WORK RELATES TO YOUR WORK!! (how is it similar, how is it different?)
+		\item Related work is not your enemy, but gives you ``the shoulders of giants'' you can stand on
+		\item 
+	\end{itemize}
+	\item 
+	\begin{itemize}
+		\item 
+	\end{itemize}
+	\item 
+	\item reader's digest
+\end{itemize}
+
+
+\subsection{Background}
+\begin{itemize}
+	\item Literature Survey and Background
+	\item 
+	\item 
+	\item 
+\end{itemize}
+
+\subsection{Theory (probably)}
+\begin{itemize}
+	\item 
+	\item 
+	\item 
+	\item 
+\end{itemize}
+
+\subsection{Specifications}
+\begin{itemize}
+	\item 
+	\item 
+	\item 
+	\item 
+\end{itemize}
+
+\subsection{Implementation}
+\begin{itemize}
+	\item 
+	\item 
+	\item 
+	\item 
+\end{itemize}
+
+\subsection{Evaluation}
+\begin{itemize}
+	\item 
+	\item 
+	\item 
+	\item 
+\end{itemize}
+
+\subsection{Summary \& conclusion}
+\begin{itemize}
+	\item 
+	\item 
+	\item 
+	\item 
+\end{itemize}
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{Writing proper English}
+
+In general, it is up to you to choose the language of you thesis.
+Since basically everything in computer science is done in English and there are many technical terms that do not have German translations, I strongly recommend to write in English.
+
+A very good and short book with basic and very useful rules and hints is \emph{The Elements of Style} by William Strunk Jr. and E.B. White~\footnote{\url{http://en.wikipedia.org/wiki/The_Elements_of_Style}} (cf. Figure \ref{fig:elements}).
+All basic rules are available in various online resources~
+\footnote{\url{http://www.cs.vu.nl/~jms/doc/elos.pdf}}.
+But for a price of less than 10 Euro, I consider it a good investment~\footnote{\url{http://www.amazon.de/The-Elements-Style-E-White/dp/020530902X/ref=sr_1_1?ie=UTF8&qid=1341214949&sr=8-1}}.
+
+\img{elements-of-style}{fig:elements}{The Elements of Style}{0.2}
+
+\subsection{Some rules}
+
+The following list contains some important rules (some of them included in Strunk's basic rules) which are disregarded quite often.
+
+\begin{itemize}
+	\item \emph{my father's dog}, \emph{the inhabitants' opinion}, \emph{Hans's car}
+	\item \emph{it's} is an abbreviation for \emph{it is} (should not be used!) and differs from \emph{its}, the possessive pronoun
+	\item \emph{a, b, and c} / \emph{a, b, or c} in clear contrast to the German \emph{a, b und c} / \emph{a, b oder c}
+	\item \emph{i.e.} (id est) does not introduce an example but a clarification
+	\item \emph{e.g.} (exempli gratia) introduces an incomplete list of examples (can be only one), never to be ended by etc.
+	\item \emph{cf.} (confer) is used to compare a statement to another part, e.g., a Figure presenting evidence for your statement (do not use cp.)
+	\item i.e. and e.g. are always enclosed in commata: \emph{my father, i.e., the guy over there} (some style guides only mention the first comma)
+	\item \emph{Figure 2.3, Listing 1.2, Table 8.2.3, Section 4.3, Chapter 1}, etc. must be capitalized (basically every term that indicates / is followed by a reference to another part of the document)
+	\item there must be a reference to every table, figure, etc. that is included in your thesis, unreferenced elements need to be removed (or referenced)
+	\item figures, tables, listing, etc. are not the carrier of information, they are only used for clarification and details that are not required for the overall understanding of what you are talking about. the crux of what you are talking about should always be contained in the written text so that figures could be removed without loosing the basic meaning of what you want to express
+	\item \emph{we} are explaining, performing, evaluating, etc. (do not use \emph{I} or passive statement, like, e.g., \emph{in Section 2.3, XYZ is explained})
+	\item stick to present tense, e.g., \emph{we describe} instead of \emph{we will describe}, \emph{we evaluate XYZ} instead of \emph{we evaluated XYZ}
+	\item do not start sentences with \emph{To \dots}, use \emph{In order to \dots} or a different statement instead
+	\item when writing about a person / user in general, do not use \emph{he}, use \emph{she} instead
+\end{itemize}
+
+
+\subsection{Some resources}
+
+Some interesting (and potentially funny) resources for writing proper English:
+\begin{itemize}
+	\item \url{http://theoatmeal.com/comics/ie}
+	\item \url{http://theoatmeal.com/comics/misspelling}
+	\item \url{http://theoatmeal.com/comics/semicolon}
+	\item \url{http://theoatmeal.com/comics/apostrophe}
+\end{itemize}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{Accounts}
+
+In order to comply with the infrastructure of our group / that our group uses, you need to create some accounts to allow for a seamlessd workflow.
+
+
+\subsection{Github}
+
+Version control is very important when developing any kind of software.
+Because of the many drawbacks of SVN, I decided to use git exclusively.
+All projects are currently hosted on Github~\footnote{\url{https://github.com/}}.
+In order to use this infrastructure, you need to create an account.
+The most important feature of Github is the use of issues allowing for a very slick workflow for reporting, discussing, and fixing errors as well as feature requests (cf. Figure \ref{fig:github}).
+
+\img{github}{fig:github}{Github issues for a repo}{0.6}
+
+If you are developing for GTNA~\footnote{\url{http://www.p2p.tu-darmstadt.de/research/gtna/}}, please follow the instruction provided in the repo to create an own repository as a fork of the main project~\footnote{\url{https://github.com/BenjaminSchiller/GTNA/blob/master/CONTRIBUTING.md}}.
+
+In case you are starting a new project, I will create a repo for you in the Github organization of our group~\footnote{\url{https://github.com/organizations/P2PNetworksTUD}}.
+Please create the following branches for storing the respective data:
+\begin{itemize}
+	\item \emph{master} - code (of course other branches as well)
+	\item \emph{doc} - documentation files for the code
+	\item \emph{docs} - documents like lists, pdfs, etc.
+	\item \emph{thesis} - you thesis (latex code, images, other sources, no binaries except for thesis.pdf)
+\end{itemize}
+Please refer to the following guide on how to create an empty branch that does not branch from the master~\footnote{\url{http://www.bitflop.com/document/116}}.
+
+Please note that you can register as a student on Github~\footnote{\url{https://github.com/edu}}.
+This will give you a free micro plan (instead of paying the 7\$ per month) which allows you to create five private repositories~\footnote{\url{https://github.com/plans}}.
+
+
+
+
+\subsection{Mendeley}
+
+\emph{Mendeley}~\footnote{\url{http://www.mendeley.com/}} is basically a social network for researchers.
+But more importantly, it is a great way to organize articles, papers, etc. that you find and read during the first part of your thesis.
+Besides a web interface, \emph{Mendeley} offers desktop applications in Windows, Mac, and Linux that allow you to organize papers, annotate them, and add notes to summarize their content and write down important facts about a paper you read (cf. Figure \ref{fig:mendeley}).
+
+\img{mendeley}{fig:mendeley}{Mendeley Application on the Mac}{0.6}
+
+During the first phase of your thesis, you will read a lot of papers.
+\emph{Mendeley} can help you to organize them and also store the information you found about the papers' content.
+In order for me to see the paper you found and also see your annotations, please create a private (important!) group in Mendeley and invite me to it (you need to invite me with the address \url{benni@codingz.de} for it to work).
+Besides annotations, I highly encourage that you add a quick summary of the paper in the notes secion for each paper you have read.
+This can be as short as explaining parts of an algorithm in detail or quickly describing why the paper is not really interesting for your topic.
+This note should always include what the problem is the authors address (e.g., build the perfect Darknet) what is done in this paper (e.g., a new algorithm for XYZ), and how their solution is evaluated (e.g., simulation, theoretical, etc.).
+
+While there are also mobile application for Android and iOS devices, they don't allow for annotations on the respective device.
+Since I like reading on the iPad and want to have digital annotations in the papers without transferring them in the Mendeley desktop application later, I use the following workflow for reading papers (iOs of course, but should work with similar applications for Android):
+
+\begin{enumerate}
+	\item Create a \emph{README} folder in \emph{Dropbox}~\footnote{\url{https://www.dropbox.com/}}~\footnote{\url{http://itunes.apple.com/us/app/dropbox/id327630330?mt=8}}
+	\item Organize and categorize papers in subfolders
+	\item Import the \emph{README} folder with \emph{GoodReader}~\footnote{\url{http://itunes.apple.com/us/app/goodreader-for-ipad/id363448914?mt=8}} (and sync regularly)
+	\item Open, read, and annotate the paper with \emph{GoodReader's} annotation tool
+	\item Sync annotated paper back to\emph{Dropbox}
+	\item Add paper from \emph{README} to \emph{Mendeley} using the desktop application
+\end{enumerate}
+
+
+
+
+\subsection{Wunderkit}
+
+Managing tasks for a thesis and organizing the notes during and after meetings is quite annoying.
+While sending emails is ok, finding and organizing the information in a suitable fashion is quite impossible.
+A nice tool that allows the collaborative administration of notes and tasks is \emph{Wunderlist}~\footnote{\url{http://wunderkit.com/}} from \emph{6 Wunderkinder}~\footnote{\url{http://www.6wunderkinder.com/}}.
+
+Currently, standalone applications are only available for Mac and iPhone (cf. Figure \ref{fig:wunderkit}).
+But there is a nice web application that offers the same functionalities for non-Mac users.
+
+\img{wunderkit}{fig:wunderkit}{Wunderkit Application on the Mac}{0.6}
+
+In order to manage notes and tasks for your thesis, I create a new project in \emph{Wunderkit} and invite you to it.
+This way, we can edit notes together, create new tasks, and complete them.
+
+
+
+
+\subsection{TK VPN}
+
+In case you are going to perform computations on one or multiple of our machines, you will need to be able to connect to them.
+Most machines are configures to only accept SSH connections from IP addresses from the TUD's range or even more restricted to our own pool of addresses.
+Therefore, it is necessary that you obtain a TK account allowing you to use the TK VPN.
+
+The settings for connecting to TK's VPN are as follows:
+
+\begin{itemize}
+	\item Server: \emph{vpn.tk.informatik.tu-darmstadt.de}
+	\item Username: \emph{TK account}
+	\item Password: \emph{TK password}
+	\item Domain: \emph{TK}
+	\item Type: \emph{PPTP}
+\end{itemize}
+
+On Mac I have an option to send all traffic over the VPN connection.
+Assuming the existence of a similar option for other operating system, I advise you to NOT check this box.
+Since the VPN is only required to have a TU IP address for the communication with our servers, other traffic should not be sent over the VPN which would be rather slow!
+
+
+
+
+\subsection{BigCluster}
+
+In order to perform computation, you will most probably get an account on one of our machines, called \emph{BigCluster}.
+The \emph{BigCluster} is a blade server (HP ProLiant DL385 G7) with the following rough specs (cf. Figure \ref{fig:bigcluster}):
+
+\begin{itemize}
+	\item IP: \emph{130.83.163.152}
+	\item Username: \emph{your username}
+	\item Password: \emph{your password}
+	\item Requirement: IP address from TK's pool (e.g., using TK VPN)
+	\item Processors: \emph{(x2): AMD Opteron™ Modell 6174 (12-Core, 2,2 GHz, 12 MB L3) each}
+	\item RAM: \emph{16GB + 96GB (8 x 2GB + 12 x 8GB)}
+	\item HDD: \emph{3x500 GB SCSI (Controller: Smart Array P410i). RAID 5}
+	\item Optical drive: \emph{DVD/CD-RW}
+	\item OS: \emph{Debian Squeeze}
+\end{itemize}
+
+\img{bigcluster}{fig:bigcluster}{htop on \emph{BigCluster}}{0.6}
+
+Most of the time, multiple students and members of our group are performing computations on the machine.
+We allocate resources on demand.
+After talking to the others, I will simply tell you how many CPUs and how much RAM you can use.
+
+
+
+
+
+
+
+\subsection{IM}
+
+Often, it makes a lot of sense to be able to quickly communicate using one of the many instant messaging tools out there.
+Therefore, please add me in one of the following IM clients:
+\begin{itemize}
+	\item Jabber: \emph{benjamin.schiller@jabber.ccc.de}
+	\item ICQ: \emph{104659547}
+	\item Skype: \emph{badtaste232}
+\end{itemize}
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{Emails \& filenames}
+
+Whenever you write an email regarding your thesis, please use a subject in the form as shown in equation \ref{eq:subject}.
+\begin{equation} \label{eq:subject}
+	\$subject \;\; (\{B.Sc. | M.Sc. | Sem.\} \;\; \$thesisTitle)
+\end{equation}
+
+When attaching files to an email, like, e.g., a current version of your thesis, please name them in the form as shown in \ref{eq:filename}.
+\begin{equation} \label{eq:filename}
+	YY\!\!-\!\!MM\!\!-\!\!DD\!\_\!\$filename
+\end{equation}
+
+
+
+
+
+
+
+
+
+
+\section{Required actions / information}
+
+The following list contains everything you need to prepare before starting your thesis:
+
+\begin{itemize}
+	\item Signup for an account on Github / Mendeley / Wunderlist
+	\item Create a private (!) group in Mendeley and invite me to it (use \emph{benni@codingz.de} for the invitation!)
+\end{itemize}
+
+The following list contains all information I need from you before starting your thesis:
+
+\begin{itemize}
+	\item Name
+	\item Email
+	\item Student ID (Matrikelnummer)
+	\item Course of studies (Studiengang)
+	\item Current term (Fachsemester)
+	\item Study and examination regulations (Pr\"{u}fungsordnung)
+	\item Github / Mendeley / Wunderkit account name (or email address used for registration)
+	\item IM account name(s)
+\end{itemize}
+
+
+
+
+
+\section{Always keep in mind\dots}
+
+\img{repetetive-tasks.png}{fig:geeks}{Sometimes it is good to be a geek}{0.6}
+
+
+
+
+
+
+
+\end{document}
