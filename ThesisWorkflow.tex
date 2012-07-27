@@ -25,6 +25,9 @@
 	\end{figure}
 }
 
+\usepackage{listings}
+\lstset{captionpos=b}
+
 \title{B.Sc. / M.Sc. Workflow, Hints, and Information}
 \author{Benjamin Schiller\\\url{schiller@cs.tu-darmstadt.de}}
 \date{\today}
@@ -592,7 +595,7 @@ The \emph{BigCluster} is a blade server (HP ProLiant DL385 G7) with the followin
 	\item OS: \emph{Debian Squeeze}
 \end{itemize}
 
-\img{bigcluster}{fig:bigcluster}{htop on \emph{BigCluster}}{0.6}
+\img{bigcluster}{fig:bigcluster}{htop on \emph{BigCluster}}{0.5}
 
 Most of the time, multiple students and members of our group are performing computations on the machine.
 We allocate resources on demand.
@@ -673,9 +676,80 @@ The following list contains all information I need from you before starting your
 
 
 
+
+
+
+
+
+\appendix
+
+
+
+
+
+
+
+\section{\LaTeX}
+
+Some hints and pointer for the use of \LaTeX to write your thesis.
+
+\subsection{Thesis template}
+
+
+
+
+\subsection{Including images in \LaTeX}
+
+In order to include graphics into your thesis, you need to use the package \emph{graphicx} (cf. Listing \ref{lst:images}).
+Using the \emph{graphicspath} and \emph{DeclareGraphicsExtensions} you can specify default locations where your images are located as well as the default file extensions (they are used in the order indicated in the list).
+If both properties are set as shown in Listing \ref{lst:images}, you can simply use \emph{my-awesome-image} instead of \emph{images/my-awesome-image.jpg}.
+
+\begin{lstlisting}[label={lst:images},caption='Packages and settings for including images']
+	\usepackage{graphicx}
+	\graphicspath{{images/}{./}}
+	\DeclareGraphicsExtensions{.pdf,.png,.jpg}
+\end{lstlisting}
+
+
+\subsection{PDF vs. PNG / JPG / etc.}
+
+It is always better to use PDF vector images for any kind of figures because of their vector-based representation.
+This includes images of workflows and architectures that you create as well as plots of data generated using gnuplot.
+Especially for printing your thesis, vector-based formats should always be preferred.
+Depending on the kind of data you are plotting using gnuplot or similar software, these images can contain a large amount of data point.
+Hence the rendering of the pages can take quite a long time when browsing the document in a pdf viewer.
+Therefore, I recommend that you create two versions of all generated plots: a \emph{.pdf} version for printing the thesis and a \emph{.png} or \emph{.jpg} version for the digital version of your thesis.
+As indicated in Listing \ref{lst:images}, you can specify the extensions of graphics and hence refer to images without their extension, e.g., \emph{my-awesome-image} instead of \emph{my-awesome-image.pdf}.
+In order to use \emph{png} instead of \emph{pdf} versions of the created images, you only need to change the order of the extensions int this setting as shown in Listing \ref{lst:extensions}.
+
+\begin{lstlisting}[label={lst:extensions},caption='Packages and settings for including images']
+	\DeclareGraphicsExtensions{.png,.jpg,.pdf}
+\end{lstlisting}
+
+
+
+
+
+
+\section{Defense}
+
+\subsection{Template}
+
+\subsection{}
+
+
+
+
+
+\section{Gnuplot}
+
+
+
+
+
 \section{Always keep in mind\dots}
 
-\img{repetetive-tasks.png}{fig:geeks}{Sometimes it is good to be a geek}{0.6}
+\img{repetetive-tasks.png}{fig:geeks}{Sometimes it is geneficial to be a geek ;-)}{0.6}
 
 
 
