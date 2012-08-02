@@ -1,7 +1,7 @@
 \documentclass{article}
 
 \usepackage{geometry}
-\geometry{a4paper,left=15mm,right=15mm,top=20mm,bottom=20mm}
+\geometry{a4paper,left=25mm,right=25mm,top=35mm,bottom=35mm}
 
 \usepackage{graphicx}
 \graphicspath{{images/}{./}}
@@ -11,6 +11,8 @@
 \usepackage{hyperref}
 
 \usepackage{mathtools}
+
+\usepackage{todonotes}
 
 \newcommand{\img}[4]{
 	% #1 - source
@@ -29,15 +31,16 @@
 \lstset{captionpos=b}
 
 \title{B.Sc. / M.Sc. Workflow, Hints, and Information}
-\author{Benjamin Schiller\\\url{schiller@cs.tu-darmstadt.de}}
+\author{Benjamin Schiller\\\url{schiller@cs.tu-darmstadt.de}\\\\\small{Thanks for part of the content to Stefanie Roos \& Thorsten Strufe}}
 \date{\today}
 
 \begin{document}
 
 \maketitle
 
-
 \abstract{This documents gives a rough overview over the workflow when doing a Bachelor or Master thesis with us. Also, it includes hints on how to find and read papers, how to structure your thesis, and how to properly write down your accomplishments. Furthermore, it contains some information about the tools we use, the accounts you need to create, what information we need from you, and how to proceed when handing in your thesis.}
+
+\todo{remove I and replace by we :-)}
 
 
 \section{Rough timeline of a thesis}
@@ -124,10 +127,14 @@ An initial time plan: what are the major steps (and milestones) and roughly duri
 
 \section{Finding and reading papers}
 
+In this Section, we give a brief overview over the different publication formats for scientific work.
+Then, we describe how additional sources for your respective topic can be found and give some tips on how to read papers efficiently.
+
 
 \subsection{Publication formats}
 
-The following list gives a quick overview over the different ways, how scientific results can be published.
+The following list gives an overview over the different ways that scientific results are published.
+This is important because the relevance and impact of publications often depends on their respective format.
 
 \begin{itemize}
 	\item \textbf{books / book chapter} - detailed information, mostly very good quality, not necessarily up-to-date
@@ -142,9 +149,11 @@ The following list gives a quick overview over the different ways, how scientifi
 
 \subsection{Finding additional sources}
 
-In essence, there are three ways to find publications on a given topic: searching by keywords, backwards referencing, and forward referencing.
+In essence, there are three ways to find publications on a given topic: Searching by keywords, backwards referencing, and forward referencing.
 
-The easiest way is to use the search functionalities of a publication database like \emph{Google Scholar}, \emph{ACM}, or the proceedings of relevant conferences.
+\paragraph{Searching by keywords}
+
+The easiest way is to use the search functionalities of a publication database like \emph{Google Scholar}~\footnote{\url{http://scholar.google.com}}, \emph{ACM}~\footnote{\url{http://portal.acm.org/portal.cfm}}, or the proceedings of relevant conferences.
 Always keep in mind that not everyone uses the same terminology and keywords even though working on the same topic.
 Hence, always think about different keywords that might point to publications from the area you are working on.
 The following list includes the most important portals for finding papers:
@@ -168,20 +177,50 @@ The following list includes the most important portals for finding papers:
 	\end{itemize}
 \end{itemize}
 
-WHen you have found a paper that is relevant for your work, you should also look at its references.
-Since most paper contain information about related work that has been done before, the bibliography should contain the most important works of the same field.
-Therefore, it is always a good idea to simply look at the bibliography of relevant papers and investigate the papers that have been referenced often.
+\paragraph{Backward referencing}
 
-The other way around would be to look at the papers that reference (potentially older) publications that are relevant to your work.
+When you have found a paper that is relevant for your work, you should also look at its references.
+Since most paper contain information about related work that has been done before in the same or similar areas, the bibliography should contain the most important works of the same field.
+Therefore, it is always a good idea to look at the bibliography of relevant papers and investigate the papers that have been referenced often.
+
+\paragraph{Forward referencing}
+
+The other way around would be to look at the papers that reference older publications that are relevant to your work.
 Most portals provide a list of publications that cite a specific paper, e.g., in Google Scholar under the link \emph{Cited by}.
-
-Very often, you will find a paper with a title that sound very promising and like a perfect fit to your topic.
-Since not all of these paper are in fact relevant for your work, before printing and potentially reading a paper completely, skim over the abstract to check if the content of the paper really contains what the title (in your context) seems to promise.
-In case the abstract sound promising as well, read the summary and conclusion next before including a paper into your reading queue.
+\todo{add link with example of ``cited by"}
 
 
 
 \subsection{Reading papers}
+
+\paragraph{Abstract, summary, and conclusion first}
+
+Very often, you will find a paper with a title that sound very promising and like a perfect fit to your topic.
+Since not all of these paper are in fact relevant for your work, before printing and potentially reading a paper completely, skim over the abstract to check if the content of the paper really contains what the title (in your context) seems to promise.
+In case the abstract sound promising as well, read the summary and conclusion next before including the paper into your reading queue.
+
+
+\paragraph{Questions to ask and answer}
+
+In order to understand and get the most out of reading a paper, your should always try to answer the following questions:
+
+\begin{itemize}
+	\item How do the authors motivate the presented work?
+	\item What research question(s) to the authors tackle / answer?
+	\item What assumptions do the authors base their work on?
+	\item What solution(s) do the authors propose to solve the problem?
+	\item How is the solution evaluated?
+	\item Are there any fundamental flaws in the assumptions, solution, analysis, or evaluation?
+	\item What is the main contribution of the publication?
+	\item Which questions did the authors not answer?
+\end{itemize}
+
+It is also a good idea, to write down a single sentence summary of a paper that could be used when citing the work later, e.g., \emph{``Author1 et al. propose a solution XYZ to solve problem ABC. They evaluate their proposed system using theoretical analysis and simulations and show that the system achieves a 10\% improvement about previous work regarding metric QWE."}
+
+
+\paragraph{Reference manager}
+
+We 
 
 
 \textbf{Reading papers: }
@@ -233,21 +272,10 @@ In case the abstract sound promising as well, read the summary and conclusion ne
 
 
 
-\subsection*{Tips on scientific writing}
 
-\begin{itemize}
-	\item \url{http://homepages.inf.ed.ac.uk/bundy/how-tos/writingGuide.html}
-	\item \url{http://www-net.cs.umass.edu/kurose/writing/}
-	\item \url{http://www.cs.columbia.edu/~hgs/etc/writing-style.html}
-	\item Book: \emph{Zen - or the art of motorcycle maintenance, AUTHOR TODO}\footnote{\url{TODO}}
-	\item Book: \emph{The craft or research, AUTHOR TODO} \footnote{\url{TODO}}
-\end{itemize}
+\subsection{Outline for a computer science paper}
 
-
-
-
-\subsection*{Outline for a computer science paper}
-
+From a structural point of view, B.Sc. and M.Sc. thesis are very similar to published papers.
 The following list gives an overview over a good outline for a computer science paper (according to Al Bundy)~\footnote{\url{http://homepages.inf.ed.ac.uk/bundy/how-tos/resbible.html}}.
 
 \begin{description}
@@ -259,46 +287,19 @@ The following list gives an overview over a good outline for a computer science 
 	\item[Theory] - underlying theory, definitions, theorems etc.
 	\item[Specification] - requirements and specs of implementation
 	\item[Implementation Evaluation Related Work] - narrow but deep comparison with main rivals
-	\item[Further Work Conclusion] - summarise research, discuss significance, restate hypothesis and the evidence for and against it, - recapitulate original motivation, reassess the state of the field in the light of this new contribution
+	\item[Further Work Conclusion] - summarize research, discuss significance, restate hypothesis and the evidence for and against it, - recapitulate original motivation, reassess the state of the field in the light of this new contribution
 	\item[Appendices]
 \end{description}
 
 
 
 
-\subsection*{Plagiarism}
+\subsection{Plagiarism}
 
 \begin{itemize}
-	\item \url{TODO LINK TUD INF FB}
+	\item \url{https://www.informatik.tu-darmstadt.de/de/sonstiges/plagiarismus/}
 	\item \url{http://www.williamstallings.com/Extras/Writing_Guide.html}
 \end{itemize}
-
-
-\subsection*{Structural hints}
-
-The following lists gives a rough overview on how to structure sections, paragraphs, and sentences and how to deal with different levels of abstraction.
-
-\paragraph{Sentences}
-A sentence presents a single statement, e.g., $x = y$, \emph{red is not blue}, $z < 1 \Rightarrow x = y$.
-
-\paragraph{Paragraphs}
-A paragraph contains all statements belonging to the same idea or concept.
-For example, $x > 2$ and $y = 7 \Rightarrow x > 10$ should be grouped in a single paragraph.
-Separate paragraph on the other hand should be used for statements like \emph{``the weather is nice"} and \emph{``elephants are huge"}.
-
-\paragraph{Sections}
-A section combines all statements that belong to the same idea / line of thoughts.
-In most cases, this implies that they are on the same level of abstraction.
-Subsections should logically divide the content of a section and build upon each other, e.g., ``preliminaries for X", ``approaches for X", ``new ideas".
-
-\paragraph{Abstraction levels}
-Inside a paragraph, always stay on the same level ob abstraction, e.g., design, specification, implementation.
-In case you change the level of abstraction inside a section, do not jump between these levels.
-Either move from a high level of abstraction to a low level or the other way around (e.g., design $\rightarrow$ specification $\rightarrow$ implementation or implementation $\rightarrow$ specification $\rightarrow$ design).
-
-\paragraph{Reader's digest}
-The first part of every section summarizes what the content of this section is, e.g., ``In this Section, we motivate our work, describe the problem space, and solve the problem".
-This allow the reader to quickly get an idea about the content of a section.
 
 
 
@@ -309,7 +310,7 @@ This allow the reader to quickly get an idea about the content of a section.
 The abstract of a thesis consists of the following four points (one paragraph each):
 
 \begin{enumerate}
-	\item Problem statement: What is the problem we are trying to solve? ()One problem is more than sufficient for a thesis!)
+	\item Problem statement: What is the problem we are trying to solve? (One problem is more than sufficient for a thesis!)
 	\item Relevance: Why is this problem really a problem?
 	\item Response: What is our solution to the problem?
 	\item Confidence: how do we show in this thesis, that our solution is good?
@@ -320,7 +321,7 @@ The abstract of a thesis consists of the following four points (one paragraph ea
 	\item Broad Topic, potentially little broad background
 	\begin{itemize}
 		\item topic, special problem we're looking at, motivation
-		\item propably more background for our problem (why is it actually hard?) 
+		\item probably more background for our problem (why is it actually hard?) 
 		\item broad background, general definitions
 	\end{itemize}
 	\item our goal and our claims (what are we solving in this work?)
@@ -333,7 +334,7 @@ The abstract of a thesis consists of the following four points (one paragraph ea
 	\end{itemize}
 	\item Which metrics can we use to show the quality/quantity of our solution?
 	\begin{itemize}
-		\item probapbly rough definition of metrics
+		\item probably rough definition of metrics
 		\item Metrics to measure how good a solution is
 	\end{itemize}
 	\item If space missing the related work may be presented in a paragraph here
@@ -412,6 +413,49 @@ The abstract of a thesis consists of the following four points (one paragraph ea
 
 
 
+\section{Some tips on writing}
+
+
+\subsection{General tips on scientific writing}
+
+\begin{itemize}
+	\item \url{http://homepages.inf.ed.ac.uk/bundy/how-tos/writingGuide.html}
+	\item \url{http://www-net.cs.umass.edu/kurose/writing/}
+	\item \url{http://www.cs.columbia.edu/~hgs/etc/writing-style.html}
+	\item Book: \emph{Zen - or the art of motorcycle maintenance, Robert M. Pirsig}\footnote{\url{http://en.wikipedia.org/wiki/Zen_and_the_Art_of_Motorcycle_Maintenance}}
+	\item Book: \emph{The craft or research, Wayne C. Booth et al.} \footnote{\url{http://en.wikipedia.org/wiki/The_Craft_of_Research}}
+\end{itemize}
+
+
+\subsection{Structural hints}
+
+The following lists gives a rough overview on how to structure sections, paragraphs, and sentences and how to deal with different levels of abstraction.
+
+\paragraph{Sentences}
+A sentence presents a single statement, e.g., $x = y$, \emph{red is not blue}, $z < 1 \Rightarrow x = y$.
+
+\paragraph{Paragraphs}
+A paragraph contains all statements belonging to the same idea or concept.
+For example, $x > 2$ and $y = 7 \Rightarrow x > 10$ should be grouped in a single paragraph.
+Separate paragraph on the other hand should be used for statements like \emph{``the weather is nice"} and \emph{``elephants are huge"}.
+
+\paragraph{Sections}
+A section combines all statements that belong to the same idea / line of thoughts.
+In most cases, this implies that they are on the same level of abstraction.
+Subsections should logically divide the content of a section and build upon each other, e.g., ``preliminaries for X", ``approaches for X", ``new ideas".
+
+\paragraph{Abstraction levels}
+Inside a paragraph, always stay on the same level ob abstraction, e.g., design, specification, implementation.
+In case you change the level of abstraction inside a section, do not jump between these levels.
+Either move from a high level of abstraction to a low level or the other way around (e.g., design $\rightarrow$ specification $\rightarrow$ implementation or implementation $\rightarrow$ specification $\rightarrow$ design).
+
+\paragraph{Reader's digest}
+The first part of every section summarizes what the content of this section is, e.g., ``In this Section, we motivate our work, describe the problem space, and solve the problem".
+This allow the reader to quickly get an idea about the content of a section.
+
+
+
+
 
 
 
@@ -420,7 +464,7 @@ The abstract of a thesis consists of the following four points (one paragraph ea
 
 \section{Writing proper English}
 
-In general, it is up to you to choose the language of you thesis.
+In general, it is up to you to choose the language of your thesis.
 Since basically everything in computer science is done in English and there are many technical terms that do not have German translations, I strongly recommend to write in English.
 
 A very good and short book with basic and very useful rules and hints is \emph{The Elements of Style} by William Strunk Jr. and E.B. White~\footnote{\url{http://en.wikipedia.org/wiki/The_Elements_of_Style}} (cf. Figure \ref{fig:elements}).
@@ -449,6 +493,9 @@ The following list contains some important rules (some of them included in Strun
 	\item stick to present tense, e.g., \emph{we describe} instead of \emph{we will describe}, \emph{we evaluate XYZ} instead of \emph{we evaluated XYZ}
 	\item do not start sentences with \emph{To \dots}, use \emph{In order to \dots} or a different statement instead
 	\item when writing about a person / user in general, do not use \emph{he}, use \emph{she} instead
+	\item \emph{we proof} is in most cases wrong! except for theoretical proofs, we basically never proof something. especially when talking about the results of measurements, you should never state that \emph{these numbers proof that XYZ}. normally, our measurements (represented by figures, tables, etc.) \emph{show that in this case (in our setup), the system has property abc which indicates that XYZ.}
+	\item do not use emotional adjectives to describe scientific facts
+	\item \emph{large, giant, tiny, small, fast, slow} are not a precise description of the respective property, be as precise s possible when stating properties, e.g., of systems
 \end{itemize}
 
 
@@ -509,6 +556,7 @@ This will give you a free micro plan (instead of paying the 7\$ per month) which
 
 
 \subsection{Mendeley}
+\label{sec:mendeley}
 
 \emph{Mendeley}~\footnote{\url{http://www.mendeley.com/}} is basically a social network for researchers.
 But more importantly, it is a great way to organize articles, papers, etc. that you find and read during the first part of your thesis.
@@ -633,12 +681,12 @@ Therefore, please add me in one of the following IM clients:
 
 Whenever you write an email regarding your thesis, please use a subject in the form as shown in equation \ref{eq:subject}.
 \begin{equation} \label{eq:subject}
-	\$subject \;\; (\{B.Sc. | M.Sc. | Sem.\} \;\; \$thesisTitle)
+	\$\{subject\} \;\; (\{B.Sc. | M.Sc. | Sem.\} \;\; \$\{thesisTitle\})
 \end{equation}
 
 When attaching files to an email, like, e.g., a current version of your thesis, please name them in the form as shown in \ref{eq:filename}.
 \begin{equation} \label{eq:filename}
-	YY\!\!-\!\!MM\!\!-\!\!DD\!\_\!\$filename
+	YY\!\!-\!\!MM\!\!-\!\!DD\!-\!\$\{filename\}
 \end{equation}
 
 
@@ -670,6 +718,7 @@ The following list contains all information I need from you before starting your
 	\item Study and examination regulations (Pr\"{u}fungsordnung)
 	\item Github / Mendeley / Wunderkit account name (or email address used for registration)
 	\item IM account name(s)
+	\item main operating system
 \end{itemize}
 
 
@@ -690,6 +739,8 @@ The following list contains all information I need from you before starting your
 
 
 \section{\LaTeX}
+
+\todo{always add tudtemplate to your thesis!}
 
 Some hints and pointer for the use of \LaTeX to write your thesis.
 
@@ -749,7 +800,7 @@ In order to use \emph{png} instead of \emph{pdf} versions of the created images,
 
 \section{Always keep in mind\dots}
 
-\img{repetetive-tasks.png}{fig:geeks}{Sometimes it is geneficial to be a geek ;-)}{0.6}
+\img{repetetive-tasks.png}{fig:geeks}{Sometimes it is beneficial to be a geek ;-)}{0.6}
 
 
 
